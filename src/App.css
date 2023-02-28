@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  text-align: center;
+  max-width: 1400px;
+}
+a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
