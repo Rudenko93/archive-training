@@ -1,4 +1,7 @@
 .todoForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   label {
     input {
       width: 300px;

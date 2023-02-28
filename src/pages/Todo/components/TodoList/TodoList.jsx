@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useState } from "react"
+import { TodoItem } from "./TodoItem"
 import "./TodoList.scss"
 
 export const TodoList = () => {
@@ -9,7 +9,7 @@ export const TodoList = () => {
     <div className="todoList">
       <div className="container">
         {todos.map((todo) => (
-          <h1>{todo.text}</h1>
+          <TodoItem todo={todo} key={todo.id} id={todo.id} />
         ))}
       </div>
     </div>

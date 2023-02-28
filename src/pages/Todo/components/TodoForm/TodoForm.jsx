@@ -1,23 +1,37 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { todoActions } from "../../../../store/slices/todoSlice"
 import "./TodoForm.scss"
 
 export const TodoForm = () => {
-  const [inpVal, setInpVal] = useState("")
+  const [text, setText] = useState("")
+
+  const dispatch = useDispatch()
+  const chT = useSelector((state) => state.todo.todos)
+
   const addTodo = () => {
-    console.log(inpVal)
-    setInpVal("")
+    dispatch(todoActions.addTodo({ text }))
+    setText("")
+  }
+
+  const checkTodo = () => {
+    console.log(chT)
   }
 
   return (
     <div className="todoForm">
+      <h1>My Todo's</h1>
       <label>
         <input
           type="text"
-          value={inpVal}
-          onChange={(e) => setInpVal(e.target.value)}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
         <button type="submit" onClick={addTodo}>
           Add new Todo
+        </button>
+        <button type="submit" onClick={checkTodo}>
+          Check
         </button>
       </label>
     </div>

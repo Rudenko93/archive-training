@@ -1,0 +1,21 @@
+.todoItem {
+  margin: 10px;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  input {
+    width: 12px;
+  }
+  .todoText {
+    min-width: 500px;
+    border: 1px solid #bcbdde;
+    h1 {
+      padding: 5px;
+      &.done {
+        color: rgb(47, 255, 61);
+      }
+    }
+  }
+}
