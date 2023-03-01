@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { todoActions } from "../../../../../store/slices/todoSlice"
+import { todoActions } from "../../store/slices/todoSlice"
 import "./TodoItem.scss"
 
 export const TodoItem = ({ todo, id }) => {

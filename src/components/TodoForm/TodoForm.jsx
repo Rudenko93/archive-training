@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { todoActions } from "../../../../store/slices/todoSlice"
+import { todoActions } from "../../store/slices/todoSlice"
 import "./TodoForm.scss"
 
-export const TodoForm = () => {
+export const TodoForm = ({ children }) => {
   const [text, setText] = useState("")
 
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ export const TodoForm = () => {
 
   return (
     <div className="todoForm">
-      <h1>My Todo's</h1>
+      {children}
       <label>
         <input
           type="text"
