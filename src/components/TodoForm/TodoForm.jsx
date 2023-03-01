@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { todoActions } from "../../store/slices/todoSlice"
+import { addFetchTodo } from "../../store/slices/todoSlice"
 import "./TodoForm.scss"
 
 export const TodoForm = ({ children }) => {
@@ -10,7 +10,7 @@ export const TodoForm = ({ children }) => {
   const chT = useSelector((state) => state.todo.todos)
 
   const addTodo = () => {
-    dispatch(todoActions.addTodo({ text }))
+    dispatch(addFetchTodo(text))
     setText("")
   }
 

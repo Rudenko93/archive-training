@@ -1,17 +1,20 @@
 import { useDispatch } from "react-redux"
-import { todoActions } from "../../store/slices/todoSlice"
+import {
+  todoActions,
+  deleteFetchTodo,
+  toggleFetchTodo,
+} from "../../store/slices/todoSlice"
 import "./TodoItem.scss"
 
 export const TodoItem = ({ todo, id }) => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    console.log(todo.id)
-    dispatch(todoActions.deleteTodo({ id }))
+    dispatch(deleteFetchTodo(id))
   }
 
   const handleChange = () => {
-    dispatch(todoActions.toggleTodo({ id }))
+    dispatch(toggleFetchTodo(id))
   }
 
   return (

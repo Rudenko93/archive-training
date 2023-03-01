@@ -5,6 +5,8 @@ import "./TodoList.scss"
 
 export const TodoList = ({ fetch }) => {
   const todos = useSelector((state) => state.todo.todos)
+  const status = useSelector((state) => state.todo.status)
+
   const dispatch = useDispatch()
 
   const fetchTodo = () => {
@@ -15,6 +17,8 @@ export const TodoList = ({ fetch }) => {
     <div className="todoList">
       {fetch && <button onClick={fetchTodo}>Fetch ToDo</button>}
       <div className="container">
+        {status === "loading" && "Loading..."}
+        {status === "rejected" && `Error!`}
         {todos.map((todo) => (
           <TodoItem todo={todo} key={todo.id} id={todo.id} />
         ))}

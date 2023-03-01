@@ -43,16 +43,10 @@
       "done": false
     },
     {
-      "text": "123123",
-      "body": "123123",
-      "id": 8,
+      "id": 57,
+      "text": "json-server 11",
+      "body": "typicode",
       "done": false
-    },
-    {
-      "text": "NEW POST",
-      "body": "NEW POST",
-      "done": false,
-      "id": 9
     }
   ],
   "comments": [],

@@ -2,31 +2,98 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 export const fetchTodos = createAsyncThunk(
   "todo/fetchTodos",
-  async function () {
-    const response = await fetch("http://localhost:3000/todos")
-    const data = await response.json()
-    console.log(data)
-    return data
+  async function (_, { rejectWithValue }) {
+    try {
+      const response = await fetch("http://localhost:3000/todos")
+      if (!response.ok) {
+        throw new Error()
+      }
+      const data = await response.json()
+      return data
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const deleteFetchTodo = createAsyncThunk(
+  "todo/deleteFetchTodo",
+  async function (id, { rejectWithValue, dispatch }) {
+    try {
+      const response = await fetch(`http://localhost:3000/todos/${id}`, {
+        method: "DELETE",
+      })
+      if (!response.ok) {
+        throw new Error("Can't delete task. Server error.")
+      }
+
+      dispatch(todoActions.deleteTodo({ id }))
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const addFetchTodo = createAsyncThunk(
+  "todo/addFetchTodo",
+  async function (text, { rejectWithValue, dispatch }) {
+    try {
+      const todo = {
+        text: text,
+        id: new Date().toISOString(),
+        done: false,
+      }
+      console.log(todo)
+      const response = await fetch(`http://localhost:3000/todos`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(todo),
+      })
+      if (!response.ok) {
+        throw new Error("Can't add task. Server error.")
+      }
+      dispatch(todoActions.addTodo({ todo }))
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const toggleFetchTodo = createAsyncThunk(
+  "todo/toggleFetchTodo",
+  async function (id, { rejectWithValue, dispatch, getState }) {
+    const todo = getState().todo.todos.find((todo) => todo.id === id)
+    console.log(todo)
+
+    try {
+      const response = await fetch(`http://localhost:3000/todos/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ done: !todo.done }),
+      })
+      if (!response.ok) {
+        throw new Error("Can't toggle task. Server error.")
+      }
+      dispatch(todoActions.toggleTodo({ id }))
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
   }
 )
 
 const todoSlice = createSlice({
   name: "todo",
   initialState: {
-    todos: [
-      { text: "hi", id: new Date().toISOString() + 1, done: false },
-      { text: "by", id: new Date().toISOString(), done: false },
-    ],
+    todos: [],
     status: "init",
-    error: null,
   },
   reducers: {
     addTodo(state, action) {
-      state.todos.push({
-        text: action.payload.text,
-        id: new Date().toISOString(),
-        done: false,
-      })
+      state.todos.push(action.payload.todo)
     },
     deleteTodo(state, action) {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload.id)
@@ -42,13 +109,14 @@ const todoSlice = createSlice({
     builder
       .addCase(fetchTodos.pending, (state) => {
         state.status = "loading"
-        state.error = null
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
         state.status = "resolved"
         state.todos = [...state.todos, ...action.payload]
       })
-      .addCase(fetchTodos.rejected, (state) => {}),
+      .addCase(fetchTodos.rejected, (state, action) => {
+        state.status = "rejected"
+      }),
 })
 // .addCase(loadTodosThunk.fulfilled, (state, action) => {
 //   state.status = "success";
