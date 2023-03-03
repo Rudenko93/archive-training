@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  margin-bottom: 20px;
+  .mySlider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  .sliderNavigation {
+    // display: flex;
+    // justify-content: center;
+    // position: absolute;
+    // gap: 20px;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+  }
+}

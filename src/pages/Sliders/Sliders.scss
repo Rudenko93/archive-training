@@ -1,21 +1,6 @@
 .sliders {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  max-width: 1400px;
-  margin-top: 20px;
-  h1 {
-    margin-bottom: 30px;
-  }
-  .container {
-    position: relative;
-    overflow: hidden;
-    width: 200px;
-
-    .slider {
-      display: flex;
-      transition: transform 1s ease-in-out;
-      position: relative;
-    }
-  }
+  align-items: center;
+  margin-bottom: 20px;
 }
