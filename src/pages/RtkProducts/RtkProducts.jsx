@@ -1,5 +1,9 @@
 import { useState } from "react"
-import { useGetProductsQuery, useAddProductMutation } from "../../store/api/"
+import {
+  useGetProductsQuery,
+  useAddProductMutation,
+  useDeleteProductMutation,
+} from "../../store/api/"
 import "./RtkProducts.scss"
 
 export const RtkProducts = () => {
@@ -7,12 +11,17 @@ export const RtkProducts = () => {
   const [inpValue, setInpValue] = useState("")
   const { data = [], error, isLoading } = useGetProductsQuery(limit)
   const [addProduct, { isError }] = useAddProductMutation()
+  const [deleteProduct] = useDeleteProductMutation()
 
-  const handleAddProduct = async () => {
+  const handleAddProduct = () => {
     if (inpValue) {
       addProduct({ text: inpValue }).unwrap()
       setInpValue("")
     }
+  }
+
+  const handleDeleteProduct = (id) => {
+    deleteProduct(id).unwrap()
   }
 
   if (isLoading) return <h1>Loading...</h1>
@@ -28,7 +37,11 @@ export const RtkProducts = () => {
       <input value={inpValue} onChange={(e) => setInpValue(e.target.value)} />
       <button onClick={handleAddProduct}>Add product</button>
       {data.map((product) => (
-        <h1 key={product.id}>{product.text}</h1>
+        <h1
+          key={product.id}
+          onDoubleClick={() => handleDeleteProduct(product.id)}>
+          {product.text}
+        </h1>
       ))}
     </div>
   )
