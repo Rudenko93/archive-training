@@ -3,4 +3,20 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  .app__main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &.app__main-container > *:not(:last-child) {
+      margin-bottom: 50px;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
