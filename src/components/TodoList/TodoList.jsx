@@ -16,7 +16,7 @@ export const TodoList = ({ fetch }) => {
   return (
     <div className="todoList">
       {fetch && <button onClick={fetchTodo}>Fetch ToDo</button>}
-      <div className="container">
+      <div className="todoContainer">
         {status === "loading" && "Loading..."}
         {status === "rejected" && `Error!`}
         {todos.map((todo) => (

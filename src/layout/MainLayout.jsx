@@ -8,6 +8,7 @@ export const MainLayout = () => {
       <div className="navigation">
         <Link to="/todo">Todo's</Link>
         <Link to="/fetchtodo">Fetch Todo's</Link>
+        <Link to="/RtkProducts">RTK query product's</Link>
         <Link to="/sliders">Sliders</Link>
       </div>
       <Outlet />

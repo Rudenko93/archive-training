@@ -34,7 +34,7 @@ export const Sliders = () => {
       <div className="app__main-container">
         <Carousel infinite>
           {slides.map((slide) => (
-            <Carousel.Page>
+            <Carousel.Page key={slide.id}>
               <SliderItem slide={slide} key={slide.id} />
             </Carousel.Page>
           ))}

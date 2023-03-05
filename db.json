@@ -99,6 +99,48 @@
       "img": "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
     }
   ],
+  "products": [
+    {
+      "id": 1,
+      "text": "potato's"
+    },
+    {
+      "id": 2,
+      "text": "apple's"
+    },
+    {
+      "id": 3,
+      "text": "orange's"
+    },
+    {
+      "id": 4,
+      "text": "potato's"
+    },
+    {
+      "id": 5,
+      "text": "apple's"
+    },
+    {
+      "id": 6,
+      "text": "orange's"
+    },
+    {
+      "id": 7,
+      "text": "potato's"
+    },
+    {
+      "id": 8,
+      "text": "apple's"
+    },
+    {
+      "id": 9,
+      "text": "orange's"
+    },
+    {
+      "text": "112",
+      "id": 10
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"
