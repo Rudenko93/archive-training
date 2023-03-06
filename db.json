@@ -129,47 +129,56 @@
     {
       "id": 1,
       "text": "apple",
-      "foodType": "fruit"
+      "foodType": "fruit",
+      "price": 3
     },
     {
       "id": 2,
       "text": "potato",
-      "foodType": "vegetable"
+      "foodType": "vegetable",
+      "price": 8
     },
     {
       "id": 3,
       "text": "cherry",
-      "foodType": "berries"
+      "foodType": "berries",
+      "price": 9
     },
     {
       "id": 4,
       "text": "orange",
-      "foodType": "fruit"
+      "foodType": "fruit",
+      "price": 4
     },
     {
       "id": 5,
       "text": "carrot",
-      "foodType": "vegetable"
+      "foodType": "vegetable",
+      "price": 2
     },
     {
       "id": 6,
       "text": "tomato",
-      "foodType": "vegetable"
+      "foodType": "vegetable",
+      "price": 7
     },
     {
       "id": 7,
       "text": "banana",
-      "foodType": "fruit"
+      "foodType": "fruit",
+      "price": 6
     },
     {
       "id": 8,
       "text": "blackberry",
-      "foodType": "berries"
+      "foodType": "berries",
+      "price": 4
     },
     {
       "id": 9,
       "text": "strawberry",
-      "foodType": "berries"
+      "foodType": "berries",
+      "price": 5
     }
   ],
   "comments": [],
