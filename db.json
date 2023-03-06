@@ -123,10 +123,53 @@
     {
       "id": 7,
       "text": "potato's"
+    }
+  ],
+  "goods": [
+    {
+      "id": 1,
+      "text": "apple",
+      "foodType": "fruit"
+    },
+    {
+      "id": 2,
+      "text": "potato",
+      "foodType": "vegetable"
+    },
+    {
+      "id": 3,
+      "text": "cherry",
+      "foodType": "berries"
+    },
+    {
+      "id": 4,
+      "text": "orange",
+      "foodType": "fruit"
+    },
+    {
+      "id": 5,
+      "text": "carrot",
+      "foodType": "vegetable"
+    },
+    {
+      "id": 6,
+      "text": "tomato",
+      "foodType": "vegetable"
+    },
+    {
+      "id": 7,
+      "text": "banana",
+      "foodType": "fruit"
     },
     {
       "id": 8,
-      "text": "apple's"
+      "text": "blackberry",
+      "foodType": "berries"
+    },
+    {
+      "id": 9,
+      "text": "strawberry",
+      "foodType": "berries"
     }
   ],
   "comments": [],

@@ -10,6 +10,7 @@ export const MainLayout = () => {
         <Link to="/fetchtodo">Fetch Todo's</Link>
         <Link to="/RtkProducts">RTK query product's</Link>
         <Link to="/sliders">Sliders</Link>
+        <Link to="/sortGoods">SortGoods</Link>
       </div>
       <Outlet />
     </div>

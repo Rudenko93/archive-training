@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import { MainLayout } from "./layout"
-import { Todo, FetchTodo, Sliders, RtkProducts } from "./pages"
+import { Todo, FetchTodo, Sliders, RtkProducts, SortGoods } from "./pages"
 import "./App.css"
 
 const router = createBrowserRouter([
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
       { path: "fetchtodo", element: <FetchTodo /> },
       { path: "RtkProducts", element: <RtkProducts /> },
       { path: "sliders", element: <Sliders /> },
+      { path: "sortGoods", element: <SortGoods /> },
     ],
   },
 ])

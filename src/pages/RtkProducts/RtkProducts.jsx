@@ -24,25 +24,33 @@ export const RtkProducts = () => {
     deleteProduct(id).unwrap()
   }
 
+  if (error || isError) return <h1>Error</h1>
+
   if (isLoading) return <h1>Loading...</h1>
 
   return (
-    <div className="fetchTodo">
-      <select value={limit} onChange={(e) => setLimit(e.target.value)}>
-        <option value="">All</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-      <input value={inpValue} onChange={(e) => setInpValue(e.target.value)} />
-      <button onClick={handleAddProduct}>Add product</button>
-      {data.map((product) => (
-        <h1
-          key={product.id}
-          onDoubleClick={() => handleDeleteProduct(product.id)}>
-          {product.text}
-        </h1>
-      ))}
+    <div className="containerFetch">
+      <h1 className="title">Fetch products with RTK query</h1>
+      <div className="fetchProducts">
+        <select value={limit} onChange={(e) => setLimit(e.target.value)}>
+          <option value="">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <input value={inpValue} onChange={(e) => setInpValue(e.target.value)} />
+        <button onClick={handleAddProduct}>Add product</button>
+        <div className="products">
+          {data.map((product) => (
+            <h1
+              className="productTitle"
+              key={product.id}
+              onDoubleClick={() => handleDeleteProduct(product.id)}>
+              {product.text}
+            </h1>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

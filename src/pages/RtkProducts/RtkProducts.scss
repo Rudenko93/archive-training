@@ -1,0 +1,15 @@
+.containerFetch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    margin-bottom: 20px;
+  }
+  .fetchProducts {
+    .products {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
