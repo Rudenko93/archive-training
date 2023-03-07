@@ -5,6 +5,7 @@ import {
   useDeleteProductMutation,
 } from "../../store/api/"
 import "./RtkProducts.scss"
+import Input from "@mui/joy/Input"
 
 export const RtkProducts = () => {
   const [limit, setLimit] = useState("")
@@ -38,6 +39,9 @@ export const RtkProducts = () => {
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
+        {console.log("render")}
+
+        <Input />
         <input value={inpValue} onChange={(e) => setInpValue(e.target.value)} />
         <button onClick={handleAddProduct}>Add product</button>
         <div className="products">
